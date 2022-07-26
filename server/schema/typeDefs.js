@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server-express");
+const { gql } = require('apollo-server-express');
 
 
 //fixed error under type Query by changing users: [Users] to [User]
