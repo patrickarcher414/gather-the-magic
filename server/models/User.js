@@ -25,6 +25,17 @@ const userSchema = new Schema({
   timestamps: true
 })
 
+userSchema.pre('save', async function(next) {
+  if (this.isNew || this.isModified('pasword')) {
+    const saltRounds = 10
+    this.password = await bcrypt.hash(this.password, saltRounds)
+  }
+})
+
+userSchema.methods.isCorrectPW = async function(password) {
+  return bcrypt.compare(password, this.password)
+}
+
 const User = model('User', userSchema)
 
 module.exports = User
