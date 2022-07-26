@@ -6,7 +6,7 @@
 
 ## Client
 
-* [ ] CRA
+* [x] CRA
 * [ ] React Router
 * [ ] Apollo Client
 * [ ] GQL Schema
@@ -17,5 +17,5 @@
 
 * [x] Express
 * [x] Mongoose (Connection, Models, Seed script)
-* [ ] JWT Authentication
-* [ ] GQL TypeDefs/Resolvers
+* [x] JWT Authentication
+* [x] GQL TypeDefs/Resolvers
