@@ -31,14 +31,19 @@ const resolvers = {
       if (!isCorrectPW) {
         throw new AuthenticationError('Please use correct password.')
       }
-      const token = signToken({ _id: user._id, email: user.email, username: user.username })
+      const token = signToken(user)
       return {
         token,
         user
       }
     },
     addUser: async (parent, args, context, info) => {
-      return await User.create(args)
+      const newUser = await User.create(args)
+      const token = signToken(newUser)
+      return {
+        user: newUser,
+        token,
+      }
     },
     updateUser: async (parent, args, context, info) => {
       return await User.findByIdAndUpdate(args._id, args, { new: true })
