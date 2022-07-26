@@ -1,11 +1,14 @@
 const { gql } = require("apollo-server-express");
 
+
+//fixed error under type Query by changing users: [Users] to [User]
+
 const typeDefs = gql`
   type User {
     _id: ID
     username: String
     email: String
-  }
+  } 
 
   type Auth {
     token: String!
@@ -13,7 +16,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    users: [Users]
+    users: [User]
     user(_id: ID, username: String, email: String): User
   }
 
