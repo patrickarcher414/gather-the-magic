@@ -10,12 +10,14 @@ import './App.css';
 import Login from './pages/login'
 import Dashboard from './pages/dashboard'
 
+import Auth from './utils/auth'
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 })
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('token')
+  const token = Auth.getToken()
   return {
     headers: {
       ... headers,
@@ -36,6 +38,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/users/:id' element={<User />} />
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
