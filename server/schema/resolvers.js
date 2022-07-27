@@ -8,6 +8,9 @@ const resolvers = {
       return await User.find()
     },
     user: async (parent, args, context, info) => {
+      if (!args._id && !args.email && !args.username) {
+        throw new AuthenticationError('Please search by id, email, or username.')
+      }
       const where = {}
       if (args._id) {
         where._id = args._id
