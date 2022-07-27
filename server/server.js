@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const connection = require('./config/connection')
-const { ApolloServer} = require('apollo-server-express')
+const { ApolloServer } = require('apollo-server-express')
 const { typeDefs, resolvers } = require('./schema')
 const { authMiddleware } = require('./utils/auth')
 
@@ -27,7 +27,7 @@ connection.once('open', async () => {
     context: authMiddleware
   })
   await server.start()
-  server.applyMiddleware({ app})
+  server.applyMiddleware({ app })
 
   app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`)

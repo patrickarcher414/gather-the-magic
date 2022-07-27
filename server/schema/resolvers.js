@@ -1,4 +1,4 @@
-const { User } = require('../model/User')
+const { User } = require('../models')
 const { signToken } = require('../utils/auth')
 const { AuthenticationError } = require('apollo-server-express')
 
@@ -27,18 +27,23 @@ const resolvers = {
       if (!user) {
         throw new AuthenticationError('No user found with that username.')
       }
-      const isCorrectPW = await user.isCorrectPW(args.password)
+      const isCorrectPW = await user.isCorrectPassword(args.password)
       if (!isCorrectPW) {
         throw new AuthenticationError('Please use correct password.')
       }
-      const token = signToken({_id: user._id, email: user.email, username: user.username})
+      const token = signToken(user)
       return {
         token,
         user
       }
     },
     addUser: async (parent, args, context, info) => {
-      return await User.create(args)
+      const newUser = await User.create(args)
+      const token = signToken(newUser)
+      return {
+        user: newUser,
+        token,
+      }
     },
     updateUser: async (parent, args, context, info) => {
       return await User.findByIdAndUpdate(args._id, args, { new: true })
