@@ -5,7 +5,6 @@ const { ApolloServer} = require('apollo-server-express')
 const { typeDefs, resolvers } = require('./schema')
 const { authMiddleware } = require('./utils/auth')
 
-
 const PORT = 3001
 
 const app = express()
@@ -20,7 +19,6 @@ if (process.env.NODE_ENV === 'production') {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
-
 
 connection.once('open', async () => {
   const server = new ApolloServer({
