@@ -7,11 +7,11 @@
 ## Client
 
 * [x] CRA
-* [ ] React Router
-* [ ] Apollo Client
-* [ ] GQL Schema
-* [ ] Auth (JWT)
-* [ ] Login
+* [x] React Router
+* [x] Apollo Client
+* [x] GQL Schema
+* [x] Auth (JWT)
+* [x] Login
 
 ## Server
 
