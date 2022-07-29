@@ -9,7 +9,9 @@ const commentSchema = new Schema(
         },
         commentBody: {
             type: String,
-            required: true
+            required: true,
+            minlength: 1,
+            maxlength: 50
         }
     },
     {
@@ -21,9 +23,9 @@ const commentSchema = new Schema(
     }
 );
 
-commentSchema.virtual('replyCount').get(function () {
-    return this.replies.length;
-});
+// commentSchema.virtual('replyCount').get(function () {
+//     return this.replies.length;
+// });
 
 const Comment = model('Comment', commentSchema);
 
