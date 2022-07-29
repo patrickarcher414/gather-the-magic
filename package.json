@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/patrickarcher414/proj-3#readme",
   "dependencies": {
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "mtgsdk": "^1.0.0"
   },
   "devDependencies": {
     "concurrently": "^7.3.0"

@@ -3,7 +3,27 @@ const { Schema, model, Types } = require('mongoose');
 
 const cardSchema = new Schema(
     {
-        apiURL: {
+        imageUrl: {
+            type: String,
+            required: true,
+        },
+        id: {
+            type: String,
+            required: true,
+        },
+        name: {
+            type: String,
+            required: true,
+        },
+        type: {
+            type: String,
+            required: true,
+        },
+        supertypes: {
+            type: String,
+            required: true,
+        },
+        legalities: {
             type: String,
             required: true,
         },
@@ -16,6 +36,14 @@ const cardSchema = new Schema(
     }
 
 );
+
+
+
+
+
+
+
+
 
 
 const Card = model('Card', cardSchema);
