@@ -11,13 +11,14 @@ const typeDefs = gql`
   } 
 
   type Card {
+    _id: ID
     imageUrl:  String
-    id: String
+    cardId: String
     name: String
     type: String
     supertypes: String
     legalities: String
-    comments: [String]
+    comments: [Comment]
   }
 
   type Auth {
