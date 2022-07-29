@@ -10,6 +10,16 @@ const typeDefs = gql`
     email: String
   } 
 
+  type Card {
+    imageUrl:  String
+    id: String
+    name: String
+    type: String
+    supertypes: String
+    legalities: String
+    comments: [String]
+  }
+
   type Auth {
     token: String!
     user: User

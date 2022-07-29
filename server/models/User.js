@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model, SchemaTypes } = require('mongoose')
 const bcrypt = require('bcrypt')
 
 // ADD REFS TO USER FOR MODELS THAT BELONG TO THEM
@@ -20,6 +20,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 6
+  },
+  cards: {
+    type: SchemaTypes.ObjectId,
+    ref: "Card"
   }
 }, {
   timestamps: true
