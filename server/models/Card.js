@@ -1,6 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
 
-
 const cardSchema = new Schema(
     {
         imageUrl: {
@@ -36,15 +35,6 @@ const cardSchema = new Schema(
     }
 
 );
-
-
-
-
-
-
-
-
-
 
 const Card = model('Card', cardSchema);
 

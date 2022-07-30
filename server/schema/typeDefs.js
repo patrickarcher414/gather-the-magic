@@ -1,8 +1,5 @@
 const { gql } = require('apollo-server-express');
 
-
-//fixed error under type Query by changing users: [Users] to [User]
-
 const typeDefs = gql`
   type User {
     _id: ID
@@ -19,6 +16,12 @@ const typeDefs = gql`
     supertypes: String
     legalities: String
     comments: [Comment]
+  }
+
+  type Comment {
+    _id: ID
+    writtenBy: String
+    commentBody: String
   }
 
   type Auth {

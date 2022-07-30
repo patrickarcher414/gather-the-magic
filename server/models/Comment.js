@@ -1,15 +1,17 @@
 const { Schema, model, Types } = require('mongoose');
 
-
 const commentSchema = new Schema(
     {
         writtenBy: {
             type: String,
-            required: true
+            required: true,
+            ref: "User"
         },
         commentBody: {
             type: String,
-            required: true
+            required: true,
+            minlength: 1,
+            maxlength: 50
         }
     },
     {
@@ -20,10 +22,6 @@ const commentSchema = new Schema(
         id: false
     }
 );
-
-commentSchema.virtual('replyCount').get(function () {
-    return this.replies.length;
-});
 
 const Comment = model('Comment', commentSchema);
 
