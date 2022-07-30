@@ -84,7 +84,8 @@ const resolvers = {
       return await User.findByIdAndDelete(args._id)
     },
     addCard: async (parent, args, context, info) => {
-      return await Card.create(args)
+      const mtgResult = await mtg.card.find(args.mtgCardId)
+      return await Card.create({ ...args, ...mtgResult.card })
     },
     addComment: async (parent, args, context, info) => {
       const newComment = await Comment.create(args)

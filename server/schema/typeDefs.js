@@ -12,9 +12,8 @@ const typeDefs = gql`
     imageUrl:  String
     mtgCardId: String
     name: String
-    type: String
-    supertypes: String
-    legalities: String
+    type: [String]
+    supertypes: [String]
     comments: [Comment]
   }
 
@@ -43,7 +42,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     updateUser(_id: ID!, email: String, password: String, username: String): User
     deleteUser(_id: ID!): User
-    addCard(imageUrl: String!, mtgCardId: String!, name: String!, type: String!, supertypes: String!, legalities: String!): Card
+    addCard(mtgCardId: String!): Card
     addComment(writtenBy: ID!, commentBody: String!, mtgCardId: String!): Comment
   }
 `;

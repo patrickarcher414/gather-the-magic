@@ -14,18 +14,8 @@ const cardSchema = new Schema(
             type: String,
             required: true,
         },
-        type: {
-            type: String,
-            required: true,
-        },
-        supertypes: {
-            type: String,
-            required: true,
-        },
-        legalities: {
-            type: String,
-            required: true,
-        },
+        type: [String],
+        supertypes: [String],
         comments: [
             {
                 type: Types.ObjectId,
