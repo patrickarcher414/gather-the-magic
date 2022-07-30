@@ -33,18 +33,15 @@ const resolvers = {
     // link to it is https://docs.magicthegathering.io/#api_v1cards_list
 
     card: async (parent, args, context, info) => {
-      return await Card.find()
+      return await Card.findOne().populate("comments")
       // mtg.card.find(386616)
       //   .then(result => {
       //     console.log(result.card.name)
       //   })
     },
 
-    //Also not sure what to RETURN here and copied the javascript from the 
-    // Developer SDK https://docs.magicthegathering.io/#api_v1cards_list
-
     cards: async (parent, args, context, info) => {
-      return await Card.find()
+      return await Card.find().populate("comments")
 
       //       mtg.card.all()
       // .on('data', function (card) {
@@ -52,16 +49,6 @@ const resolvers = {
       // });
 
     },
-
-    //The deep-thoughts module has "thoughts" which act like comments
-    // but the format is different and I am unsure what arguments we
-    //should be passing in the async arrow function. The deep-thoughts
-    //does not use parent,args,context,info it passes in (parent, {username})
-    //which im unsure if that is what we would want/need
-
-    comment: async (parent, args, context, info) => { },
-
-    comments: async (parent, args, context, info) => { },
 
     // EVERYTHING BELOW THIS IS OKAY! END CAMERON'S WORK HERE
 
@@ -95,6 +82,14 @@ const resolvers = {
     },
     deleteUser: async (parent, args, context, info) => {
       return await User.findByIdAndDelete(args._id)
+    },
+    addCard: async (parent, args, context, info) => {
+      return await Card.create(args)
+    },
+    addComment: async (parent, args, context, info) => {
+      const newComment = await Comment.create(args)
+      await Card.findOneAndUpdate({ mtgCardId: args.mtgCardId }, { $addToSet: { comments: newComment._id } })
+      return newComment
     },
   }
 }

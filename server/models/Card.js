@@ -6,7 +6,7 @@ const cardSchema = new Schema(
             type: String,
             required: true,
         },
-        cardId: {
+        mtgCardId: {
             type: String,
             required: true,
         },
@@ -28,7 +28,7 @@ const cardSchema = new Schema(
         },
         comments: [
             {
-                type: String,
+                type: Types.ObjectId,
                 ref: "Comment"
             }
         ]

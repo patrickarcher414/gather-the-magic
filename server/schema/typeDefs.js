@@ -10,7 +10,7 @@ const typeDefs = gql`
   type Card {
     _id: ID
     imageUrl:  String
-    cardId: String
+    mtgCardId: String
     name: String
     type: String
     supertypes: String
@@ -32,13 +32,19 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(_id: ID, username: String, email: String): User
+    card: Card
+    cards: [Card]
+    comment: Comment
+    comments: [Comment]
   }
 
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    updateUser(_id: ID, email: String, password: String, username: String): User
-    deleteUser(_id: ID): User
+    updateUser(_id: ID!, email: String, password: String, username: String): User
+    deleteUser(_id: ID!): User
+    addCard(imageUrl: String!, mtgCardId: String!, name: String!, type: String!, supertypes: String!, legalities: String!): Card
+    addComment(writtenBy: ID!, commentBody: String!, mtgCardId: String!): Comment
   }
 `;
 
