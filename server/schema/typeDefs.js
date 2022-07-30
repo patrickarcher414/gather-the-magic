@@ -1,8 +1,5 @@
 const { gql } = require('apollo-server-express');
 
-
-//fixed error under type Query by changing users: [Users] to [User]
-
 const typeDefs = gql`
   type User {
     _id: ID
