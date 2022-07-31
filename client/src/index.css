@@ -1,13 +1,105 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* flex and alignment */
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+/* Login/signup page */
+
+form {
+  width: 55%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -60%);
+}
+
+.loginHeader {
+  font-size: 38px;
+  color: #3c67b6;
+  text-decoration: underline;
+}
+
+button {
+  color: #5884d6;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+}
+
+.button {
+  color: #5884d6;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.25rem;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signupHeader {
+  font-size: 38px;
+  color: #3c67b6;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.my-signup1 {
+  margin-top: var(--spacing-one);
+  margin-bottom: var(--spacing-one);
+}
+
+.my-signup2 {
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
 }
