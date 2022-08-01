@@ -6,7 +6,7 @@ const cardSchema = new Schema(
             type: String,
             required: true,
         },
-        cardId: {
+        mtgCardId: {
             type: String,
             required: true,
         },
@@ -14,21 +14,11 @@ const cardSchema = new Schema(
             type: String,
             required: true,
         },
-        type: {
-            type: String,
-            required: true,
-        },
-        supertypes: {
-            type: String,
-            required: true,
-        },
-        legalities: {
-            type: String,
-            required: true,
-        },
+        type: [String],
+        supertypes: [String],
         comments: [
             {
-                type: String,
+                type: Types.ObjectId,
                 ref: "Comment"
             }
         ]

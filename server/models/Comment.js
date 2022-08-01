@@ -3,7 +3,7 @@ const { Schema, model, Types } = require('mongoose');
 const commentSchema = new Schema(
     {
         writtenBy: {
-            type: String,
+            type: Types.ObjectId,
             required: true,
             ref: "User"
         },
@@ -12,7 +12,7 @@ const commentSchema = new Schema(
             required: true,
             minlength: 1,
             maxlength: 50
-        }
+        },
     },
     {
         toJSON: {
