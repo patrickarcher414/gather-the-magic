@@ -25,12 +25,9 @@ const resolvers = {
       return await User.findOne(where)
     },
 
-    // START CAMERON'S POSSIBLY WORKS, PROBABLY DOESN'T WORK, CODE
-    //STARTS BELOW
+    // START CAMERON'S WORK
 
-    //I am not sure what syntax we need to RETURN here, I commented out
-    //the javascript for finding cards by ID from the Developer SDK
-    // link to it is https://docs.magicthegathering.io/#api_v1cards_list
+    // https://docs.magicthegathering.io/#api_v1cards_list
 
     card: async (parent, args, context, info) => {
       return await Card.findOne().populate("comments")
@@ -41,16 +38,16 @@ const resolvers = {
     },
 
     cards: async (parent, args, context, info) => {
-      return await Card.find().populate("comments")
 
-      //       mtg.card.all()
-      // .on('data', function (card) {
-      //   console.log(card.name)
-      // });
+      // return await Card.find().populate("comments")
 
+      return await mtg.card.all({ supertypes: 'legendary', pageSize: 1 })
+      .on('data', function (card) {
+        return card.imageUrl
+      });
     },
 
-    // EVERYTHING BELOW THIS IS OKAY! END CAMERON'S WORK HERE
+    // END CAMERON'S WORK 
 
   },
   Mutation: {
