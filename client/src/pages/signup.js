@@ -30,12 +30,12 @@ const Signup = () => {
   };
 
   return (
-    <div className="container my-1">
+    <div className="center container my-1">
       <Link to="/login">← Go to Login</Link>
 
-      <h2>Signup</h2>
+      <h2 className="signupHeader">Signup</h2>
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
+        <div className="flex-row space-between my-signup1">
           <label htmlFor="userName"> Username:</label>
           <input
             placeholder="Username"
@@ -45,7 +45,7 @@ const Signup = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div className="flex-row space-between my-signup2">
           <label htmlFor="email">Email:</label>
           <input
             placeholder="youremail@test.com"

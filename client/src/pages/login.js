@@ -23,10 +23,9 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <Link to="/signup"> Signup </Link>
+    <div className="center container my-login">
       <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h1 className="loginHeader">Login</h1>
         <input
           name="username"
           value={username}
@@ -44,6 +43,9 @@ const Login = () => {
           required
         />
         <button type="submit">Log In</button>
+        <Link to="/signup" className="button">
+          Signup
+        </Link>
       </form>
     </div>
   );

@@ -1,39 +1,39 @@
-import { useNavigate } from 'react-router-dom'
-import { useQuery } from '@apollo/client'
-import { USER } from '../utils/queries'
-import Auth from '../utils/auth'
-
+// import { useNavigate } from "react-router-dom";
+// import { useQuery } from "@apollo/client";
+// import { USER } from "../utils/queries";
+// import Auth from "../utils/auth";
+import Card from "../components/Card.js";
 
 const Dashboard = () => {
-  const navigate = useNavigate()
-  const currentUser = Auth.loggedIn()
-  const { loading, error, data } = useQuery(USER, {
-    variables: {
-      _id: currentUser?.data?._id
-    }
-  })
+  // const navigate = useNavigate();
+  // const currentUser = Auth.loggedIn();
+  // const { loading, error, data } = useQuery(USER, {
+  //   variables: {
+  //     _id: currentUser?.data?._id,
+  //   },
+  // });
 
-  
-  if (!currentUser) {
-    navigate('/login')
-  }
+  // if (!currentUser) {
+  //   navigate("/login");
+  // }
 
-  // ADD LOADING SPINNER
-  if (loading) return 'Loading...'
-  if (error) return `Error! ${error.message}`
+  // // ADD LOADING SPINNER
+  // if (loading) return "Loading...";
+  // if (error) return `Error! ${error.message}`;
 
-  const user = data?.user 
-  if (!user) {
-    return 'No user found.'
-  }
+  // const user = data?.user;
+  // if (!user) {
+  //   return "No user found.";
+  // }
 
   return (
     <div>
-      <h1>Welcome {user.username}!</h1>
-      <p>{user.email}</p>
-      <button onClick={Auth.logout}>Log Out</button>
+      {/* <h1>Welcome {user.username}!</h1> */}
+      {/* <p>{user.email}</p> */}
+      {/* <button onClick={Auth.logout}>Log Out</button> */}
+      <Card />
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
