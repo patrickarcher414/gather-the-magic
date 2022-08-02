@@ -28,10 +28,11 @@ const Dashboard = () => {
   }
 
   return (
-    <div>
+    <div className="flex-wrap space-around">
       <CardsGallery 
       dataSource='mtg'
-    />
+      className="cardImage"
+      />
     </div>
   );
 };

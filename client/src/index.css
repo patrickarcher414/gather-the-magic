@@ -27,6 +27,13 @@ code {
     monospace;
 }
 
+/* cardsGallery */
+.cardImage {
+  margin: 10px;
+  min-width: 20vw;
+  max-width: 20vw;
+}
+
 /* flex and alignment */
 
 .flex-row {
@@ -36,6 +43,10 @@ code {
 
 .space-between {
   justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .flex-end {
