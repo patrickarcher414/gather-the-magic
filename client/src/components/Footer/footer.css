@@ -5,12 +5,12 @@
   height: 40px;
   padding: 1.5rem 1.5rem 2rem;
   background-color: rgba(3, 3, 3, 0.649);
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
-.flex-across {
+.flex-right {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row-reverse;
 }
 
 #contactFooter {

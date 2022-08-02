@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="block" id="contactFooter">
       <footer className="footer">
-        <ul className="flex-across">
+        <ul className="flex-right">
           <li>
             <a
               target="_blank"
