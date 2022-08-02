@@ -1,0 +1,19 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  padding: 1.5rem 1.5rem 2rem;
+  background-color: rgba(3, 3, 3, 0.649);
+  margin-bottom: 10px;
+}
+
+.flex-across {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#contactFooter {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
