@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const ALL_USERS = gql `
+export const ALL_USERS = gql`
   query ALL_USERS {
     users {
       _id
@@ -10,7 +10,7 @@ export const ALL_USERS = gql `
   }
 `
 
-export const USER = gql `
+export const USER = gql`
   query USER($_id: ID, $username: String, $email: String) {
     user(username: $username, _id: $_id, email: $email) {
       _id
@@ -20,7 +20,7 @@ export const USER = gql `
   }
 `
 
-export const CARDS = gql `
+export const CARDS = gql`
   query CARDS($_id: ID, $imageUrl: String, $mtgCardId: String, $name: String, $type: [String], $supertypes: [String], $comments: [Comment]) {
     cards(_id: $_id, imageUrl: $imageUrl, mtgCardId: $mtgCardId, name: $name, type: $type, supertypes: $supertypes, comments: $comments) {
       _id
@@ -35,7 +35,7 @@ export const CARDS = gql `
   }
 `
 
-export const MTG_CARDS = gql `
+export const MTG_CARDS = gql`
   query MTG_CARDS {
     cards {
       imageUrl
