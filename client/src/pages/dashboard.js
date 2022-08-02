@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { USER } from "../utils/queries";
+import { USER, CARDS } from "../utils/queries";
 import Auth from "../utils/auth";
-const resolvers = require("../../../server/schema/resolvers.js")
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -26,11 +25,16 @@ const Dashboard = () => {
     return "No user found.";
   }
 
-  const cardQuery = resolvers.Query.cards()
+  const cards = useQuery(CARDS, {
+    type: ['creature', 'planeswalker'],
+    supertypes: 'legendary'
+  })
 
   return (
     <div>
-      <img src={cardQuery} />
+      {cards.map(card => {
+        return <img src={card.imageUrl} />
+      })}
     </div>
   );
 };
