@@ -1,37 +1,37 @@
-// import { useNavigate } from "react-router-dom";
-// import { useQuery } from "@apollo/client";
-// import { USER } from "../utils/queries";
-// import Auth from "../utils/auth";
-import Card from "../components/Card.js";
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { USER } from "../utils/queries";
+import Auth from "../utils/auth";
+import CardsGallery from "../components/cardsGallery";
 
 const Dashboard = () => {
-  // const navigate = useNavigate();
-  // const currentUser = Auth.loggedIn();
-  // const { loading, error, data } = useQuery(USER, {
-  //   variables: {
-  //     _id: currentUser?.data?._id,
-  //   },
-  // });
 
-  // if (!currentUser) {
-  //   navigate("/login");
-  // }
+  const navigate = useNavigate();
+  const currentUser = Auth.loggedIn();
+  const { loading, error, data } = useQuery(USER, {
+    variables: {
+      _id: currentUser?.data?._id,
+    },
+  });
 
-  // // ADD LOADING SPINNER
-  // if (loading) return "Loading...";
-  // if (error) return `Error! ${error.message}`;
+  if (!currentUser) {
+    navigate("/login");
+  }
 
-  // const user = data?.user;
-  // if (!user) {
-  //   return "No user found.";
-  // }
+  // ADD LOADING SPINNER
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
+
+  const user = data?.user;
+  if (!user) {
+    return "No user found.";
+  }
 
   return (
     <div>
-      {/* <h1>Welcome {user.username}!</h1> */}
-      {/* <p>{user.email}</p> */}
-      {/* <button onClick={Auth.logout}>Log Out</button> */}
-      <Card />
+      <CardsGallery 
+      dataSource='mtg'
+    />
     </div>
   );
 };

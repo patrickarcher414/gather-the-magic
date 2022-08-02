@@ -19,3 +19,30 @@ export const USER = gql `
     }
   }
 `
+
+export const CARDS = gql `
+  query CARDS($_id: ID, $imageUrl: String, $mtgCardId: String, $name: String, $type: [String], $supertypes: [String], $comments: [Comment]) {
+    cards(_id: $_id, imageUrl: $imageUrl, mtgCardId: $mtgCardId, name: $name, type: $type, supertypes: $supertypes, comments: $comments) {
+      _id
+      imageUrl
+      mtgCardId
+      name
+      type
+      set
+      supertypes
+      comments 
+    }
+  }
+`
+
+export const MTG_CARDS = gql `
+  query MTG_CARDS {
+    cards {
+      imageUrl
+      name
+      type
+      set
+      supertypes
+    }
+  }
+`

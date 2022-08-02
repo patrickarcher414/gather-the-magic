@@ -12,7 +12,8 @@ const typeDefs = gql`
     imageUrl:  String
     mtgCardId: String
     name: String
-    type: [String]
+    type: String
+    set: String
     supertypes: [String]
     comments: [Comment]
   }

@@ -13,7 +13,7 @@ class Auth {
 
   loggedIn() {
     const token = this.getToken()
-    if (token && !token.isTokenExpired(token)) {
+    if (token && !this.isTokenExpired(token)) {
       const decodedToken = decode(token)
       return decodedToken
     }
