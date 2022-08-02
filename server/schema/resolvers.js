@@ -43,7 +43,7 @@ const resolvers = {
     // mtgCards
     cards: async (parent, args, context, info) => {
 
-     const cards = await mtg.card.where({ supertypes: 'legendary', type: 'creature'})
+      const cards = await mtg.card.where({ supertypes: 'legendary', type: 'creature' })
       console.log(cards)
       return cards
     },
