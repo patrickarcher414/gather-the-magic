@@ -27,11 +27,12 @@ const Dashboard = () => {
     return "No user found.";
   }
 
-  
-
   return (
-    <div>
-      <CardsGallery dataSource='mtg' />
+    <div className="flex-wrap space-around">
+      <CardsGallery 
+      dataSource='mtg'
+      className="cardImage"
+      />
     </div>
   );
 };

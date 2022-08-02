@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
 
 
-const CardsGallery = () => {
+const CardsGallery = (props) => {
 
   const {loading, error, data} = useQuery(MTG_CARDS, {
     type: ['creature', 'planeswalker'],
@@ -17,12 +17,9 @@ const CardsGallery = () => {
     return "No cards found.";
   }
 
- return cards.map(card => {
-  return <img src={card.imageUrl} />
-})
-
-
- 
+  return cards.map(card => {
+  return <img src={card.imageUrl} className={props.className}/>
+  })
 }
 
 export default CardsGallery
