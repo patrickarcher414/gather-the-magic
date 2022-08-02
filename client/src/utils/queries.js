@@ -34,9 +34,9 @@ export const CARDS = gql `
     }
   }
 `
-// rename cards to mtgcards in typeDefs, queries and resolvers
+
 export const MTG_CARDS = gql `
-  query MTG_CARDS  {
+  query MTG_CARDS {
     cards {
       imageUrl
       name
