@@ -2,6 +2,8 @@ const { User, Card, Comment } = require('../models')
 const { signToken } = require('../utils/auth')
 const { AuthenticationError } = require('apollo-server-express')
 const mtg = require('mtgsdk')
+const { mtgGetAllCards } = require('../utils/helpers')
+
 
 const resolvers = {
   Query: {
@@ -29,6 +31,7 @@ const resolvers = {
 
     // https://docs.magicthegathering.io/#api_v1cards_list
 
+    //  savedCards
     card: async (parent, args, context, info) => {
       return await Card.findOne().populate("comments")
       // mtg.card.find(386616)
@@ -37,14 +40,12 @@ const resolvers = {
       //   })
     },
 
+    // mtgCards
     cards: async (parent, args, context, info) => {
 
-      // return await Card.find().populate("comments")
-
-      return await mtg.card.all({ supertypes: 'legendary', pageSize: 1 })
-      .on('data', function (card) {
-        return card.imageUrl
-      });
+     const cards = await mtg.card.where({ supertypes: 'legendary'})
+      console.log(cards)
+      return cards
     },
 
     // END CAMERON'S WORK 

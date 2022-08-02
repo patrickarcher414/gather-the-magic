@@ -13,8 +13,8 @@ import Dashboard from "./pages/dashboard";
 
 import Auth from "./utils/auth";
 import Signup from "./pages/signup";
-import Nav from "./pages/nav";
-import Footer from "./pages/footer";
+import Nav from "./components/nav";
+import Footer from "./components/footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
