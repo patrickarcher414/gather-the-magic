@@ -17,12 +17,9 @@ const CardsGallery = () => {
     return "No cards found.";
   }
 
- return cards.map(card => {
+  return cards.map(card => {
   return <img src={card.imageUrl} />
-})
-
-
- 
+  })
 }
 
 export default CardsGallery

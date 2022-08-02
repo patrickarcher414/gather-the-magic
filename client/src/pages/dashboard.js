@@ -27,11 +27,11 @@ const Dashboard = () => {
     return "No user found.";
   }
 
-  
-
   return (
     <div>
-      <CardsGallery dataSource='mtg' />
+      <CardsGallery 
+      dataSource='mtg'
+    />
     </div>
   );
 };
