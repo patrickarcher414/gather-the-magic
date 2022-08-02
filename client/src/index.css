@@ -14,7 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* MTG FONT AND BACKGROUND*/
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   background: #383836;
   background-image: url(https://gatherer.wizards.com/Images/background/Gray_Patterned_BG.jpg);
   background-position: center;
@@ -27,6 +27,9 @@ code {
     monospace;
 }
 
+.container {
+  display: flex;
+}
 /* cardsGallery */
 .cardImage {
   margin: 10px;
@@ -121,6 +124,11 @@ input {
 .my-signup2 {
   margin-top: var(--spacing-two);
   margin-bottom: var(--spacing-two);
+}
+
+.flex-right {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 @media screen and (max-width: 768px) {
