@@ -10,9 +10,8 @@ const Nav = () => {
   return (
     <div className="container">
       <h1>Gather the Magic</h1>
-      <a href="">Logout</a>
-      <a href="">My Deck</a>
-      <a href="">Home</a>
+      {/*  COPY FOR EACH PAGE */}
+      <Link to="/" >Dashboard</Link>
     </div>
   )
    

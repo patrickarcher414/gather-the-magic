@@ -14,7 +14,8 @@ const cardSchema = new Schema(
             type: String,
             required: true,
         },
-        type: [String],
+        type: String,
+        set: String,
         supertypes: [String],
         comments: [
             {

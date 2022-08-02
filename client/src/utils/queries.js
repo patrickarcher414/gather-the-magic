@@ -28,8 +28,21 @@ export const CARDS = gql `
       mtgCardId
       name
       type
+      set
       supertypes
       comments 
+    }
+  }
+`
+// rename cards to mtgcards in typeDefs, queries and resolvers
+export const MTG_CARDS = gql `
+  query MTG_CARDS  {
+    cards {
+      imageUrl
+      name
+      type
+      set
+      supertypes
     }
   }
 `

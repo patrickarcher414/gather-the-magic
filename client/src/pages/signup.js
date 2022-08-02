@@ -5,7 +5,7 @@ import { ADD_USER } from "../utils/mutations";
 import auth from "../utils/auth";
 
 const Signup = () => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: "", password: "", username: "" });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -14,7 +14,7 @@ const Signup = () => {
       variables: {
         email: formState.email,
         password: formState.password,
-        userName: formState.userName,
+        username: formState.username,
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -36,12 +36,12 @@ const Signup = () => {
       <h2 className="signupHeader">Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-signup1">
-          <label htmlFor="userName"> Username:</label>
+          <label htmlFor="username"> Username:</label>
           <input
             placeholder="Username"
-            name="userName"
-            type="userName"
-            id="userName"
+            name="username"
+            type="text"
+            id="username"
             onChange={handleChange}
           />
         </div>
