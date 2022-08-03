@@ -27,10 +27,6 @@ const resolvers = {
       return await User.findOne(where)
     },
 
-    // START CAMERON'S WORK
-
-    // https://docs.magicthegathering.io/#api_v1cards_list
-
     //  savedCards
     card: async (parent, args, context, info) => {
       return await Card.findOne().populate("comments")
@@ -43,7 +39,7 @@ const resolvers = {
     // mtgCards
     cards: async (parent, args, context, info) => {
 
-     const cards = await mtg.card.where({ supertypes: 'legendary', type: 'creature'})
+      const cards = await mtg.card.where({ supertypes: 'legendary', type: 'creature' })
       console.log(cards)
       return cards
     },
