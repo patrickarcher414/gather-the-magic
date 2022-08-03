@@ -27,10 +27,6 @@ const resolvers = {
       return await User.findOne(where)
     },
 
-    // START CAMERON'S WORK
-
-    // https://docs.magicthegathering.io/#api_v1cards_list
-
     //  savedCards
     card: async (parent, args, context, info) => {
       return await Card.findOne().populate("comments")
