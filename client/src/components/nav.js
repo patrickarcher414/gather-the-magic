@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="container">
+    <div className="container flex-between">
       <h1>Gather the Magic</h1>
       {/*  COPY FOR EACH PAGE */}
-      <div className="flex-right">
+
+      <div>
         <Link to="/">
           <i className="fab fa-solid fa-house fa-2x"></i>
         </Link>

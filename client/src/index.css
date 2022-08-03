@@ -30,6 +30,10 @@ code {
 .container {
   display: flex;
 }
+
+.flex-between {
+  justify-content: space-between;
+}
 /* cardsGallery */
 .cardImage {
   margin: 10px;
@@ -124,11 +128,6 @@ input {
 .my-signup2 {
   margin-top: var(--spacing-two);
   margin-bottom: var(--spacing-two);
-}
-
-.flex-right {
-  display: flex;
-  flex-direction: row-reverse;
 }
 
 @media screen and (max-width: 768px) {
