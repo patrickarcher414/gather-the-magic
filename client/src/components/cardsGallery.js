@@ -14,7 +14,7 @@ const CardsGallery = (props) => {
   })
 
   if (loading) return "Loading...";
-  if (error) return Error! ${error.message};
+  if (error) return `Error! ${error.message}`;
 
   const cards = data?.cards;
   if (!cards) {
@@ -45,7 +45,7 @@ const CardsGallery = (props) => {
       </Modal>
 
       {cards.map(card => {
-        return <img src={card.imageUrl} className={props.className} onClick={() => setModalData(card)} key={${card.imageUrl}-${card.name}} />
+        return <img src={card.imageUrl} className={props.className} onClick={() => setModalData(card)} key={`${card.imageUrl}-${card.name}`} />
       })}
     </>
   )
