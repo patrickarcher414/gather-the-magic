@@ -25,12 +25,22 @@
   },
   "homepage": "https://github.com/patrickarcher414/proj-3#readme",
   "dependencies": {
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "crypto-js": "^4.1.1",
     "if-env": "^1.0.4",
     "mtgsdk": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "reactstrap": "^9.1.2",
+    "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "concurrently": "^7.3.0"
+    "concurrently": "^7.3.0",
+    "json-loader": "^0.5.7"
   }
 }
