@@ -15,7 +15,16 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "reactstrap": "^9.1.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "crypto": "npm:crypto-browserify",
+    "http": "npm:stream-http",
+    "https": "npm:https-browserify",
+    "stream": "npm:stream-browserify",
+    "os": "npm:os-browserify",
+    "zlib": "npm:zlib-browserify",
+    "path": "npm:path-browserify",
+    "fs": "npm:fs",
+    "tls": "npm:tls"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,5 +49,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "crypto": false,
+    "stream": false,
+    "http": false,
+    "tls": false,
+    "zlib": false,
+    "https": false,
+    "net": false
   }
 }

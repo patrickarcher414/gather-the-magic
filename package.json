@@ -26,21 +26,32 @@
   "homepage": "https://github.com/patrickarcher414/proj-3#readme",
   "dependencies": {
     "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
     "crypto-js": "^4.1.1",
     "if-env": "^1.0.4",
     "mtgsdk": "^1.0.0",
+    "net": "^1.0.2",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "querystring-es3": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "reactstrap": "^9.1.2",
     "stream": "^0.0.2",
     "stream-browserify": "^3.0.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "concurrently": "^7.3.0",
     "json-loader": "^0.5.7"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }
