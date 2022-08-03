@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
 import { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
+import { card } from "mtgsdk";
 
 const CardsGallery = (props) => {
   const [modalData, setModalData] = useState(null);
@@ -28,7 +29,7 @@ const CardsGallery = (props) => {
       <Modal isOpen={!!modalData} toggle={closeModal}>
         <ModalHeader toggle={closeModal}>{modalData?.name}</ModalHeader>
         <ModalBody>
-          <img src={modalData?.imageUrl}></img>
+          <img src={modalData?.imageUrl} alt={card.name}></img>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={null}>
@@ -47,6 +48,7 @@ const CardsGallery = (props) => {
             className={props.className}
             onClick={() => setModalData(card)}
             key={`${card.imageUrl}-${card.name}`}
+            alt={card.name}
           />
         );
       })}
