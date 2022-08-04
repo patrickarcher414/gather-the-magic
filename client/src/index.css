@@ -1,4 +1,4 @@
-root {
+:root {
   /* VARS -COLOR SCHEME- */
   --txt-lt: #fff8d9;
   --brdr-lt: #dbb4d5;
@@ -39,6 +39,28 @@ code {
   margin: 10px;
   min-width: 20vw;
   max-width: 20vw;
+}
+
+#cardCards {
+  transition: .6s;  
+}
+
+#cardCards:hover {
+  transform: translate(0, -4%);
+  box-shadow:
+    0 5px 2px #fff,
+    0 5px 3px #fff,
+    0 5px 21px var(--brdr-lt),
+    0 5px 41px var(--brdr-lt),
+    0 5px 46px var(--brdr-lt),
+    0 5px 51px var(--brdr-lt),
+    0 5px 76px var(--brdr-lt);
+}
+
+#cardsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* flex and alignment */
@@ -134,4 +156,95 @@ input {
   .card {
     width: 100%;
   }
+}
+
+/* modal styles */
+#modalContainer {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 650px;
+  height: fit-content;
+  margin-top: -200px;
+  margin-left: -325px;
+  overflow: auto;
+  background: rgba(219, 180, 213, .1);
+  border: 1px solid rgba(219, 180, 213, .25);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 4px rgba(0,0,0,.5); 
+}
+
+#modalBtns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+#modalBtn, #closeModalBtn {
+  color: #000;
+  cursor: pointer;
+}
+
+#modalBtn, #closeModalBtn, #dashLink {
+  background-color: rgba(219, 180, 213, .5);
+  border-radius: 20px;
+  width: 200px;
+  box-shadow: 0 5px 4px rgba(0,0,0,.5); 
+  transition: .6s; 
+}
+
+#modalBtn:hover, #closeModalBtn:hover, #dashLink:hover {
+  background-color: rgba(219, 180, 213, .15);
+  color: #fff;
+  transform: translate(0, -8%);  
+}
+
+#modalContent img {
+  margin-left: 20px;
+}
+
+#modalHeaderBox {
+  display: flex;
+  justify-content: center;
+}
+
+#modalHeader {
+  font-size: 25px;
+}
+
+/* nav styles */
+#navHeaderBox {
+  display: flex;
+  justify-content: center;
+}
+
+#navLinksBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#dashLink {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+}
+
+#navHeader {
+  color: #fff;
+  text-shadow:
+    0 0 2px #fff,
+    0 0 3px #fff,
+    0 0 42px var(--brdr-lt),
+    0 0 82px var(--brdr-lt),
+    0 0 92px var(--brdr-lt),
+    0 0 102px var(--brdr-lt),
+    0 0 151px var(--brdr-lt);
+}
+
+#navContainer { 
+  margin-bottom: 15px;
 }

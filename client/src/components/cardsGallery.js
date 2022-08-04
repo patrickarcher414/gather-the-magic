@@ -35,48 +35,57 @@ const CardsGallery = (props) => {
         isOpen={!!modalData}
         toggle={closeModal}
       >
-        <div
-          id='modalHeader'
-          toggle={closeModal}
-        >
-          {modalData?.name}
+        <div id='modalHeaderBox'>
+          <div
+            id='modalHeader'
+            toggle={closeModal}
+          >
+            {modalData?.name}
+          </div>
         </div>
-
         <div id='modalContent'>
           <img
             src={modalData?.imageUrl}
           // alt={card.name}
           ></img>
-          <p></p>
         </div>
-
-        <div>
+        <div id='modalBtns'>
           <button
             id='modalBtn'
             onClick={null}
           >
             add to deck
           </button>
-
-          <button onClick={() => setModalData(null)}>
+          <button
+            id='closeModalBtn'
+            onClick={() => {
+              var modal = document.getElementById("modalContainer");
+              setModalData(null);
+              modal.style.display = "none";
+            }}
+          >
             cancel
           </button>
         </div>
       </div>
-
-      {cards.map((card) => {
-        return (
-
-          <img
-            src={card.imageUrl}
-            className={props.className}
-            onClick={() => setModalData(card)}
-            key={`${card.imageUrl}-${card.name}`}
-            alt={card.name}
-          />
-
-        );
-      })}
+      <div id='cardsContainer'>
+        {cards.map((card) => {
+          return (
+            <img
+              id='cardCards'
+              src={card.imageUrl}
+              className={props.className}
+              onClick={() => {
+                var modal = document.getElementById("modalContainer");
+                setModalData(card);
+                modal.style.display = "block";
+              }}
+              key={`${card.imageUrl}-${card.name}`}
+              alt={card.name}
+            />
+          );
+        })}
+      </div>
     </>
   )
 }
