@@ -250,17 +250,27 @@ input {
 }
 
 /* additional footer styles */
-#contactFooter {
-  height: fit-content;
-}
-
-#footerLinksBox {
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem 1.5rem 2rem;
+  background-color: rgba(3, 3, 3, 0.649);
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
 }
 
 #gitHubLink {
   text-decoration: none;
   color: var(--brdr-lt);
+  position: absolute;
+  transform: translate(10, 10%);
+  transition: .6s; 
+}
+
+#gitHubLink:hover {
+  transform: translate(0, -12%); 
+  color: var(--brdr-drk);
 }
