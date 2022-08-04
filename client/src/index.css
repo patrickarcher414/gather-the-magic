@@ -137,7 +137,7 @@ input {
 
 .signupHeader {
   font-size: 38px;
-  color: #3c67b6;
+  color: var(--brdr-lt);
   text-decoration: underline;
   font-weight: bold;
 }
@@ -158,9 +158,27 @@ input {
   }
 }
 
-#loginBtn, #signupBtn {
+#loginBtn, #signupBtn, #signupSubmitBtn, #returnToLogin {
   color: #000;
   text-decoration: none;
+}
+
+#signupTitle {
+  color: var(--brdr-lt);
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#signupTitle {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#returnBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
 }
 
 /* modal styles */
@@ -193,7 +211,7 @@ input {
   cursor: pointer;
 }
 
-#modalBtn, #closeModalBtn, #dashLink, #logoutLink, #loginBtn, #signupBtn {
+#modalBtn, #closeModalBtn, #dashLink, #logoutLink, #loginBtn, #signupBtn, #signupSubmitBtn, #returnToLogin {
   background-color: rgba(219, 180, 213, .5);
   border-radius: 20px;
   width: 200px;
@@ -201,7 +219,7 @@ input {
   transition: .6s; 
 }
 
-#modalBtn:hover, #closeModalBtn:hover, #dashLink:hover, #logoutLink:hover, #loginBtn:hover, #signupBtn:hover {
+#modalBtn:hover, #closeModalBtn:hover, #dashLink:hover, #logoutLink:hover, #loginBtn:hover, #signupBtn:hover, #signupSubmitBtn:hover, #returnToLogin:hover {
   background-color: rgba(219, 180, 213, .15);
   color: #fff;
   transform: translate(0, -8%);  

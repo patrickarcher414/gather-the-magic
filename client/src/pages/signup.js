@@ -31,9 +31,20 @@ const Signup = () => {
 
   return (
     <div className="center container my-1">
-      <Link to="/login">← Go to Login</Link>
-
-      <h2 className="signupHeader">Signup</h2>
+      <div id="returnBox">
+        <Link 
+          id="returnToLogin"
+          to="/login"
+        >
+          ← Go to Login
+        </Link>
+      </div>
+      <h2 
+        id="signupTitle"
+        className="signupHeader"
+      >
+        Signup
+      </h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-signup1">
           <label htmlFor="username"> Username:</label>
@@ -66,7 +77,12 @@ const Signup = () => {
           />
         </div>
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button 
+            id="signupSubmitBtn"
+            type="submit"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>
