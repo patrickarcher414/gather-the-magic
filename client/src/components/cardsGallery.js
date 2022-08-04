@@ -1,9 +1,13 @@
 import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
-import { useState } from "react";
+import { useState } from 'react';
 
 const CardsGallery = (props) => {
   const [modalData, setModalData] = useState(null);
+  
+  function closeModal() {
+      setModalData(null);
+  }
 
   const { loading, error, data } = useQuery(MTG_CARDS, {
     type: ["creature", "planeswalker"],
@@ -18,27 +22,37 @@ const CardsGallery = (props) => {
     return "No cards found.";
   }
 
-  function closeModal() {
-    setModalData(null);
-  }
-
   return (
     <>
-      {/* this was from ReactStrap but was causing a lot of issues. We should be looking for a different modal package to use */}
-      {/* <Modal isOpen={!!modalData} toggle={closeModal}>
-        <ModalHeader toggle={closeModal}>{modalData?.name}</ModalHeader>
-        <ModalBody>
-          <img src={modalData?.imageUrl} alt={card.name}></img>
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={null}>
-            Save
-          </Button>{" "}
-          <Button color="secondary" onClick={() => setModalData(null)}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal> */}
+      <div 
+            id='modalContainer'
+            isOpen={!!modalData} 
+            toggle={closeModal}
+        >
+            <div
+                id='modalHeader'
+                toggle={closeModal}
+            >
+                {modalData?.name}
+            </div>
+            <div id='modalContent'>
+                <img
+                    src={modalData?.imageUrl}
+                    // alt={card.name}
+                ></img>
+            </div>
+            <div>
+                <button 
+                id='modalBtn'
+                onClick={null}
+                >
+                    add to deck
+                </button>
+                <button onClick={() => setModalData(null)}>
+                    cancel
+                </button>
+            </div>
+        </div>
 
       {cards.map((card) => {
         return (
@@ -52,7 +66,7 @@ const CardsGallery = (props) => {
         );
       })}
     </>
-  );
-};
+  )
+}
 
 export default CardsGallery;
