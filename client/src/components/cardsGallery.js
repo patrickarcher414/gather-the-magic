@@ -1,13 +1,18 @@
 import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
+import { CARDS } from "../utils/queries";
 import { useState } from 'react';
 
 
 const CardsGallery = (props) => {
   const [modalData, setModalData] = useState(null);
-  
+
   function closeModal() {
-      setModalData(null);
+    setModalData(null);
+  }
+
+  function displayId(card) {
+    return <div>{card.id}</div>
   }
 
   const { loading, error, data } = useQuery(MTG_CARDS, {
@@ -25,38 +30,43 @@ const CardsGallery = (props) => {
 
   return (
     <>
-      <div 
-            id='modalContainer'
-            isOpen={!!modalData} 
-            toggle={closeModal}
+      <div
+        id='modalContainer'
+        isOpen={!!modalData}
+        toggle={closeModal}
+      >
+        <div
+          id='modalHeader'
+          toggle={closeModal}
         >
-            <div
-                id='modalHeader'
-                toggle={closeModal}
-            >
-                {modalData?.name}
-            </div>
-            <div id='modalContent'>
-                <img
-                    src={modalData?.imageUrl}
-                    // alt={card.name}
-                ></img>
-            </div>
-            <div>
-                <button 
-                id='modalBtn'
-                onClick={null}
-                >
-                    add to deck
-                </button>
-                <button onClick={() => setModalData(null)}>
-                    cancel
-                </button>
-            </div>
+          {modalData?.name}
         </div>
+
+        <div id='modalContent'>
+          <img
+            src={modalData?.imageUrl}
+          // alt={card.name}
+          ></img>
+          <p></p>
+        </div>
+
+        <div>
+          <button
+            id='modalBtn'
+            onClick={null}
+          >
+            add to deck
+          </button>
+
+          <button onClick={() => setModalData(null)}>
+            cancel
+          </button>
+        </div>
+      </div>
 
       {cards.map((card) => {
         return (
+
           <img
             src={card.imageUrl}
             className={props.className}
@@ -64,6 +74,7 @@ const CardsGallery = (props) => {
             key={`${card.imageUrl}-${card.name}`}
             alt={card.name}
           />
+
         );
       })}
     </>

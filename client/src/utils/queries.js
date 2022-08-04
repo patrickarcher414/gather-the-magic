@@ -26,6 +26,7 @@ export const CARDS = gql`
       _id
       imageUrl
       mtgCardId
+      id
       name
       type
       set
@@ -39,6 +40,7 @@ export const MTG_CARDS = gql`
   query MTG_CARDS {
     cards {
       imageUrl
+      id
       name
       type
       set

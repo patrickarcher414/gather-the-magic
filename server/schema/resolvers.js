@@ -30,10 +30,6 @@ const resolvers = {
     //  savedCards
     card: async (parent, args, context, info) => {
       return await Card.findOne().populate("comments")
-      // mtg.card.find(386616)
-      //   .then(result => {
-      //     console.log(result.card.name)
-      //   })
     },
 
     // mtgCards
