@@ -62,22 +62,24 @@ const CardsGallery = (props) => {
           </button>
         </div>
       </div>
-
-      {cards.map((card) => {
-        return (
-          <img
-            src={card.imageUrl}
-            className={props.className}
-            onClick={() => {
-              var modal = document.getElementById("modalContainer");
-              setModalData(card);
-              modal.style.display = "block";
-            }}
-            key={`${card.imageUrl}-${card.name}`}
-            alt={card.name}
-          />
-        );
-      })}
+      <div id='cardsContainer'>
+        {cards.map((card) => {
+          return (
+            <img
+              id='cardCards'
+              src={card.imageUrl}
+              className={props.className}
+              onClick={() => {
+                var modal = document.getElementById("modalContainer");
+                setModalData(card);
+                modal.style.display = "block";
+              }}
+              key={`${card.imageUrl}-${card.name}`}
+              alt={card.name}
+            />
+          );
+        })}
+      </div>
     </>
   )
 }

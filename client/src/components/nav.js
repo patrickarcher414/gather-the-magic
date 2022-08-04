@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
+<<<<<<< HEAD
     <div className="container flex-between">
       <h1>Gather the Magic</h1>
       {/*  COPY FOR EACH PAGE */}
@@ -20,3 +21,26 @@ const Nav = () => {
 };
 
 export default Nav;
+=======
+    <div 
+      className="container"
+      id="navContainer"
+    >
+      <div id="navHeaderBox">
+        <h1 id="navHeader">Gather the Magic</h1>
+      </div>
+      <div id="navLinksBox">
+        {/*  COPY FOR EACH PAGE */}
+        <Link 
+          id="dashLink"
+          to="/" 
+        >
+          Dashboard
+        </Link>
+      </div>
+    </div>
+  ) 
+}
+
+export default Nav;
+>>>>>>> jenna
