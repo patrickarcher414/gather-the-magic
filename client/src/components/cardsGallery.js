@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
 import { useState } from "react";
 
+
 const CardsGallery = (props) => {
   const [modalData, setModalData] = useState(null);
 
