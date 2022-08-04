@@ -42,8 +42,15 @@ const Login = () => {
           type="password"
           required
         />
-        <button type="submit">Log In</button>
-        <Link to="/signup" className="button">
+        <button 
+          id="loginBtn"
+          type="submit"
+        >Log In</button>
+        <Link 
+          id="signupBtn"
+          to="/signup" 
+          className="button"
+        >
           Signup
         </Link>
       </form>

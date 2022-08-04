@@ -97,8 +97,8 @@ form {
 
 .loginHeader {
   font-size: 38px;
-  color: #3c67b6;
-  text-decoration: underline;
+  color: var(--brdr-lt);
+  text-decoration: none;
 }
 
 button {
@@ -158,6 +158,11 @@ input {
   }
 }
 
+#loginBtn, #signupBtn {
+  color: #000;
+  text-decoration: none;
+}
+
 /* modal styles */
 #modalContainer {
   display: none;
@@ -188,7 +193,7 @@ input {
   cursor: pointer;
 }
 
-#modalBtn, #closeModalBtn, #dashLink, #logoutLink {
+#modalBtn, #closeModalBtn, #dashLink, #logoutLink, #loginBtn, #signupBtn {
   background-color: rgba(219, 180, 213, .5);
   border-radius: 20px;
   width: 200px;
@@ -196,7 +201,7 @@ input {
   transition: .6s; 
 }
 
-#modalBtn:hover, #closeModalBtn:hover, #dashLink:hover, #logoutLink:hover {
+#modalBtn:hover, #closeModalBtn:hover, #dashLink:hover, #logoutLink:hover, #loginBtn:hover, #signupBtn:hover {
   background-color: rgba(219, 180, 213, .15);
   color: #fff;
   transform: translate(0, -8%);  
