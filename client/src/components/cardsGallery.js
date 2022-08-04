@@ -42,6 +42,11 @@ const CardsGallery = (props) => {
             src={modalData?.imageUrl}
             // alt={card.name}
           ></img>
+          <div id='commentsBox'>
+            <div id='commentsContent'>
+              
+            </div>
+          </div>
         </div>
         <div id='modalBtns'>
           <button 

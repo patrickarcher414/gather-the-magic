@@ -5,17 +5,19 @@ function Footer() {
   return (
     <div className="block" id="contactFooter">
       <footer className="footer">
-        <ul className="flex-right">
-          <li>
+        <div 
+          id="footerLinksBox"
+          
+        >
             <a
+              id="gitHubLink"
               target="_blank"
               rel="noreferrer"
               href="https://github.com/patrickarcher414/proj-3"
             >
               <i className="fab fa-github fa-2x"></i>
             </a>
-          </li>
-        </ul>
+        </div>
       </footer>
     </div>
   );

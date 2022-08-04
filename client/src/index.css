@@ -248,3 +248,19 @@ input {
 #navContainer { 
   margin-bottom: 15px;
 }
+
+/* additional footer styles */
+#contactFooter {
+  height: fit-content;
+}
+
+#footerLinksBox {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+#gitHubLink {
+  text-decoration: none;
+  color: var(--brdr-lt);
+}
