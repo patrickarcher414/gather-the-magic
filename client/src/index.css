@@ -188,7 +188,7 @@ input {
   cursor: pointer;
 }
 
-#modalBtn, #closeModalBtn, #dashLink {
+#modalBtn, #closeModalBtn, #dashLink, #logoutLink {
   background-color: rgba(219, 180, 213, .5);
   border-radius: 20px;
   width: 200px;
@@ -196,7 +196,7 @@ input {
   transition: .6s; 
 }
 
-#modalBtn:hover, #closeModalBtn:hover, #dashLink:hover {
+#modalBtn:hover, #closeModalBtn:hover, #dashLink:hover, #logoutLink:hover {
   background-color: rgba(219, 180, 213, .15);
   color: #fff;
   transform: translate(0, -8%);  
@@ -224,10 +224,10 @@ input {
 #navLinksBox {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-#dashLink {
+#dashLink, #logoutLink {
   color: #000;
   text-decoration: none;
   text-align: center;

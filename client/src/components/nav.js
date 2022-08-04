@@ -17,6 +17,12 @@ const Nav = () => {
         >
           Dashboard
         </Link>
+        <Link
+          id="logoutLink"
+          to="/login"
+        >
+          Logout
+        </Link>
       </div>
     </div>
   ) 
