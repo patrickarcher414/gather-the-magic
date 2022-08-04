@@ -3,25 +3,6 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-<<<<<<< HEAD
-    <div className="container flex-between">
-      <h1>Gather the Magic</h1>
-      {/*  COPY FOR EACH PAGE */}
-
-      <div>
-        <Link to="/">
-          <i className="fab fa-solid fa-house fa-2x"></i>
-        </Link>
-        <Link to="/login">
-          <i className="fa-solid fa-person-running fa-2x"></i>
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-export default Nav;
-=======
     <div 
       className="container"
       id="navContainer"
@@ -43,4 +24,3 @@ export default Nav;
 }
 
 export default Nav;
->>>>>>> jenna
