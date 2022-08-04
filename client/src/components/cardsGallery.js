@@ -1,8 +1,13 @@
 import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
-
+import { useState } from 'react';
 
 const CardsGallery = (props) => {
+  const [modalData, setModalData] = useState(null);
+  
+  function closeModal() {
+      setModalData(null);
+  }
 
   const {loading, error, data} = useQuery(MTG_CARDS, {
     type: ['creature', 'planeswalker'],
@@ -17,9 +22,51 @@ const CardsGallery = (props) => {
     return "No cards found.";
   }
 
-  return cards.map(card => {
-  return <img src={card.imageUrl} className={props.className}/>
-  })
+  return (
+    <>
+      <div 
+            id='modalContainer'
+            isOpen={!!modalData} 
+            toggle={closeModal}
+        >
+            <div
+                id='modalHeader'
+                toggle={closeModal}
+            >
+                {modalData?.name}
+            </div>
+            <div id='modalContent'>
+                <img
+                    src={modalData?.imageUrl}
+                    // alt={card.name}
+                ></img>
+            </div>
+            <div>
+                <button 
+                id='modalBtn'
+                onClick={null}
+                >
+                    add to deck
+                </button>
+                <button onClick={() => setModalData(null)}>
+                    cancel
+                </button>
+            </div>
+        </div>
+
+      {cards.map((card) => {
+        return (
+          <img
+            src={card.imageUrl}
+            className={props.className}
+            onClick={() => setModalData(card)}
+            key={`${card.imageUrl}-${card.name}`}
+            alt={card.name}
+          />
+        );
+      })}
+    </>
+  )
 }
 
-export default CardsGallery
+export default CardsGallery;
