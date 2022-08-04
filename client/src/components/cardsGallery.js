@@ -1,8 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
 import { useState } from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
-import { card } from "mtgsdk";
 
 const CardsGallery = (props) => {
   const [modalData, setModalData] = useState(null);
@@ -26,7 +24,8 @@ const CardsGallery = (props) => {
 
   return (
     <>
-      <Modal isOpen={!!modalData} toggle={closeModal}>
+      {/* this was from ReactStrap but was causing a lot of issues. We should be looking for a different modal package to use */}
+      {/* <Modal isOpen={!!modalData} toggle={closeModal}>
         <ModalHeader toggle={closeModal}>{modalData?.name}</ModalHeader>
         <ModalBody>
           <img src={modalData?.imageUrl} alt={card.name}></img>
@@ -39,7 +38,7 @@ const CardsGallery = (props) => {
             Cancel
           </Button>
         </ModalFooter>
-      </Modal>
+      </Modal> */}
 
       {cards.map((card) => {
         return (
