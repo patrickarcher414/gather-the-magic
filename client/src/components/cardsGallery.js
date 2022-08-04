@@ -25,41 +25,54 @@ const CardsGallery = (props) => {
   return (
     <>
       <div 
-            id='modalContainer'
-            isOpen={!!modalData} 
+        id='modalContainer'
+        isOpen={!!modalData} 
+          toggle={closeModal}
+      >
+        <div id='modalHeaderBox'>
+          <div
+            id='modalHeader'
             toggle={closeModal}
-        >
-            <div
-                id='modalHeader'
-                toggle={closeModal}
-            >
-                {modalData?.name}
-            </div>
-            <div id='modalContent'>
-                <img
-                    src={modalData?.imageUrl}
-                    // alt={card.name}
-                ></img>
-            </div>
-            <div>
-                <button 
-                id='modalBtn'
-                onClick={null}
-                >
-                    add to deck
-                </button>
-                <button onClick={() => setModalData(null)}>
-                    cancel
-                </button>
-            </div>
+          >
+            {modalData?.name}
+          </div>
         </div>
+        <div id='modalContent'>
+          <img
+            src={modalData?.imageUrl}
+            // alt={card.name}
+          ></img>
+        </div>
+        <div id='modalBtns'>
+          <button 
+            id='modalBtn'
+            onClick={null}
+          >
+            add to deck
+          </button>
+          <button 
+            id='closeModalBtn'
+            onClick={() => {
+              var modal = document.getElementById("modalContainer");
+              setModalData(null);
+              modal.style.display = "none";
+            }}
+          >
+            cancel
+          </button>
+        </div>
+      </div>
 
       {cards.map((card) => {
         return (
           <img
             src={card.imageUrl}
             className={props.className}
-            onClick={() => setModalData(card)}
+            onClick={() => {
+              var modal = document.getElementById("modalContainer");
+              setModalData(card);
+              modal.style.display = "block";
+            }}
             key={`${card.imageUrl}-${card.name}`}
             alt={card.name}
           />
