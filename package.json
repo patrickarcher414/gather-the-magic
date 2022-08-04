@@ -1,5 +1,5 @@
 {
-  "name": "proj-3",
+  "name": "gather-the-magic",
   "version": "1.0.0",
   "description": "cameron test",
   "main": "index.js",
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/patrickarcher414/proj-3.git"
+    "url": "git+https://github.com/patrickarcher414/gather-the-magic.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/patrickarcher414/proj-3/issues"
+    "url": "https://github.com/patrickarcher414/gather-the-magic/issues"
   },
-  "homepage": "https://github.com/patrickarcher414/proj-3#readme",
+  "homepage": "https://github.com/patrickarcher414/gather-the-magic#readme",
   "dependencies": {
     "assert": "^2.0.0",
     "browserify-zlib": "^0.2.0",
@@ -48,10 +48,5 @@
   "devDependencies": {
     "concurrently": "^7.3.0",
     "json-loader": "^0.5.7"
-  },
-  "browser": {
-    "fs": false,
-    "path": false,
-    "os": false
   }
 }
