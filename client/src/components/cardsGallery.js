@@ -1,12 +1,18 @@
 import { useQuery } from "@apollo/client";
 import { MTG_CARDS } from "../utils/queries";
+import { CARDS } from "../utils/queries";
 import { useState } from 'react';
+
 
 const CardsGallery = (props) => {
   const [modalData, setModalData] = useState(null);
-  
+
   function closeModal() {
-      setModalData(null);
+    setModalData(null);
+  }
+
+  function displayId(card) {
+    return <div>{card.id}</div>
   }
 
   const { loading, error, data } = useQuery(MTG_CARDS, {
@@ -24,10 +30,10 @@ const CardsGallery = (props) => {
 
   return (
     <>
-      <div 
+      <div
         id='modalContainer'
-        isOpen={!!modalData} 
-          toggle={closeModal}
+        isOpen={!!modalData}
+        toggle={closeModal}
       >
         <div id='modalHeaderBox'>
           <div
@@ -40,7 +46,7 @@ const CardsGallery = (props) => {
         <div id='modalContent'>
           <img
             src={modalData?.imageUrl}
-            // alt={card.name}
+          // alt={card.name}
           ></img>
           <div id='commentsBox'>
             <div id='commentsContent'>
@@ -49,13 +55,13 @@ const CardsGallery = (props) => {
           </div>
         </div>
         <div id='modalBtns'>
-          <button 
+          <button
             id='modalBtn'
             onClick={null}
           >
             add to deck
           </button>
-          <button 
+          <button
             id='closeModalBtn'
             onClick={() => {
               var modal = document.getElementById("modalContainer");
